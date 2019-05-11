@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
-
+<link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
 
       <link rel="stylesheet" href="css/style.css">
 
@@ -62,16 +62,48 @@
 
 <div style="font-size:15px; font-weight:200; opacity:0.9;">ยานอวกาศที่ชื่อ <strong style="font-weight:500;">ณัฐนนท์</strong> กับ <strong style="font-weight:500;">ณัฐพร</strong> ดาวของเขา ที่หวังว่าเราจะได้อยู่กัน ตราบจนจักรวาลนี้สลายสิ้น ❤️ </div>
 
+<br/><br/>
+<p><div id="time-elapsed"></div></p>
 
 
 
+<br/><br/><br/><br/>
 </p>
   </div>
 
-<br/><br/><br/><br/>
-
+<br/><br/>
 
     <script  src="js/index.js"></script>
+
+    <script>
+
+    var startDateTime = new Date(2019,4,10,23,59,59,0); // YYYY (M-1) D H m s ms (start time and date from DB)
+var startStamp = startDateTime.getTime();
+
+var newDate = new Date();
+var newStamp = newDate.getTime();
+
+var timer; // for storing the interval (to stop or pause later if needed)
+
+function updateClock() {
+    newDate = new Date();
+    newStamp = newDate.getTime();
+    var diff = Math.round((newStamp-startStamp)/1000);
+
+    var d = Math.floor(diff/(24*60*60)); /* though I hope she won't be working for consecutive days :) */
+    diff = diff-(d*24*60*60);
+    var h = Math.floor(diff/(60*60));
+    diff = diff-(h*60*60);
+    var m = Math.floor(diff/(60));
+    diff = diff-(m*60);
+    var s = diff;
+
+    document.getElementById("time-elapsed").innerHTML = d+" วัน "+h+" ชั่วโมง "+m+" นาที "+s+" วินาที ที่ต่อไปนี้จะเป็นของเราตลอดไป";
+}
+
+timer = setInterval(updateClock, 1000);
+
+    </script>
 
 
 </body>
