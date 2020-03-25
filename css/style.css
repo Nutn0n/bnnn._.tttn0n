@@ -1,7 +1,7 @@
 body {
   background-color: #FFF;
   transition: background-color 0.2s;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Sukhumvit Set', 'Prompt', sans-serif;
 }
 
 .center {
@@ -14,10 +14,99 @@ body {
           transform: translate(-50%, -50%);
 }
 
-.light-bg {
-  background-color: #000;
-  transition: background-color 1s;
+a {
+  color:#fff;
+  font-weight: 600;
+  text-decoration: underline;
 }
+
+a:hover {
+  opacity: 0.6;
+}
+
+
+
+#time-elapsed {
+  font-size:27px;
+  margin: 50px 10%;
+  width: auto;
+  line-height: 40px;
+  border-radius: 30px;
+}
+
+.light-bg {
+  background-color: black;
+  transition: background-color 1s;
+
+
+
+}
+
+
+.background-slide {
+  filter: grayscale(100%);
+  width:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  animation: 50s infinite bgchange;
+}
+
+.background-slide #time-elapsed {
+  vertical-align: center;
+  padding: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@keyframes bgchange {
+  0% {
+
+      background-image: url(../slide/1.jpg);
+  }
+  10% {
+
+      background-image: url(../slide/2.jpg);
+  }
+  20% {
+
+      background-image: url(../slide/3.jpg);
+  }
+  30% {
+
+      background-image: url(../slide/4.jpg);
+  }
+  40% {
+
+      background-image: url(../slide/5.jpg);
+  }
+  50% {
+
+      background-image: url(../slide/6.jpg);
+  }
+  60% {
+
+      background-image: url(../slide/7.jpg);
+  }
+  70% {
+
+      background-image: url(../slide/8.jpg);
+  }
+  80% {
+
+      background-image: url(../slide/9.jpg);
+  }
+  90% {
+
+      background-image: url(../slide/10.jpg);
+  }
+  100% {
+
+      background-image: url(../slide/11.jpg);
+  }
+}
+
+
 
 @media screen and (max-width: 992px) {
   .hidden_message {
@@ -27,6 +116,13 @@ body {
   }
 
   .hidden_message p {
+  }
+
+  .background-slide #time-elapsed {
+    vertical-align: center;
+    padding: 100px 5px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
 
@@ -77,13 +173,19 @@ body {
   color:rgba(255,255,255,0.9);
   text-align: center;
   margin-top:35%;
+
+
 }
 
+
+
 .hidden_message p {
+  z-index: 999;
   display: inline-block;
-  max-width: 400px;
+  max-width: 600px;
+  font-size:28px;
   font-weight: 200;
-  line-height: 25px;
+  line-height: 45px;
 }
 
 /* Rounded sliders  */
